@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <title>Age calculator app</title>
+</head>
+
+<body>
+  <div class="container ">
+    <header class="header">
+      <h1 class="header__title">Age calculator app</h1>
+      <p class="header__info">Enter the <span class="header__info--emphasis">day</span>, <span
+              class="header__info--emphasis">month</span>, and <span class="header__info--emphasis">year</span> of your
+        birthday (or any past event), to calculate exactly how old you are down to the <span
+              class="header__info--emphasis">year</span>, <span class="header__info--emphasis">month</span> and <span
+              class="header__info--emphasis">day</span>.</p>
+    </header>
+
+    <main>
+        <div class="card">
+          <form class="form"
+                name="date-calc-form"
+                novalidate>
+            <div class="form__wrapper--content">
+              <div class="form__wrapper--input" id="month-input-error">
+                <label for="month" class="form__label">
+                  Month 
+                </label>
+                <input type="text"
+                       name="month"
+                       id="month"
+                       class="form__input"
+                       placeholder="MM"
+                       required>
+                <span class="form__error--message" id="month-error">&nbsp;</span>
+              </div>
+
+              <div class="form__wrapper--input"
+                  id="day-input-error">
+                <label for="day" class="form__label">
+                  Day
+                </label>
+                <input type="text"
+                      name="day"
+                      id="day"
+                      class="form__input"
+                      placeholder="DD"
+                      required>
+                <span class="form__error--message" id="day-error">&nbsp;</span>
+              </div>
+
+              <div class="form__wrapper--input"
+                  id="year-input-error">
+                <label for="year" class="form__label">
+                  Year
+                </label>
+                <input type="text"
+                      name="year"
+                      id="year"
+                      class="form__input"
+                      placeholder="YYYY"
+                      required>
+                <span class="form__error--message" id="year-error">&nbsp;</span>
+              </div>
+            </div>
+
+            <button type='button'
+                    class="btn btn-calculate"
+                    id="btn-calculate"><img src="/assets/images/icon-arrow.svg"
+                    alt="icon-arrow-down"
+                    class="icon"
+                    onclick="calculateTimePassed()"></button>
+          </form>
+
+          <section class="card__results--section">
+            <div class="card__results--wrapper">
+              <p class="card__results--display">
+                <span class="card__results--display-year" id="year-result">--</span>
+                 years
+              </p>
+            </div>
+            <div class="card__results--wrapper">
+              <p class="card__results--display">
+                <span class="card__results--display-month" id="month-result">--</span>
+                months
+              </p>
+            </div>
+            <div class="card__results--wrapper">
+              <p class="card__results--display">
+                <span class="card__results--display-day" id="day-result">--</span>
+                days
+              </p>
+            </div>
+          </section>
+        </div>
+    </main>
+  </div>
+</body>
+
+</html>
