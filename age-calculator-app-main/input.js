@@ -71,7 +71,15 @@ function validateInputDate() {
     }
     // console.log(validMonth)
 
-    
+      /* Validate Year */
+    if (!yearInputValue) {
+        validYear = false;
+        showError('year-input-error', 'year-error', 'This field is required');
+    } else if (year > new Date().getFullYear() || year < 1000) {
+        validYear = false;
+        showError('year-input-error', 'year-error', 'Must be in the past');
+    }
+
 
 
 
