@@ -14,7 +14,7 @@ let inputDate = {
     year: null
 };
 
-const calButton = document.getElementById('btnt');
+const calcButton = document.getElementById('btn-calculate');
 
 function calculateTimePassed(){
     clearErrors(['month', 'day', 'year']);
@@ -92,33 +92,33 @@ function validateInputDate() {
 
 /*  Listen for input changes */
 monthInput.addEventListener('input', function () {
-    clearError('month');
-  });
-  
-  dayInput.addEventListener('input', function () {
-    clearError('day');
-  });
-  
-  yearInput.addEventListener('input', function () {
-    clearError('year');
-  });
-  
-  function showError(errorElement, errorMessageElement, errorMessage) {
-    document.getElementById(errorElement).classList.add('input-error');
-    document.getElementById(errorMessageElement).classList.add('display-error');
-    document.getElementById(errorMessageElement).innerHTML = errorMessage;
-  }
-  
-  function clearErrors(fields) {
-    fields.forEach((field) => clearError(field));
-  }
-  
-  function clearError(field) {
-    calcButton.classList.remove('slide-right');
-    calcButton.classList.remove('slide-left');
-    document.getElementById(`${field}-result`).innerHTML = '--';
-    document
-      .getElementById(`${field}-input-error`)
-      .classList.remove('input-error');
-    document.getElementById(`${field}-error`).classList.remove('display-error');
-  }
+  clearError('month');
+});
+
+dayInput.addEventListener('input', function () {
+  clearError('day');
+});
+
+yearInput.addEventListener('input', function () {
+  clearError('year');
+});
+
+function showError(errorElement, errorMessageElement, errorMessage) {
+  document.getElementById(errorElement).classList.add('input-error');
+  document.getElementById(errorMessageElement).classList.add('display-error');
+  document.getElementById(errorMessageElement).innerHTML = errorMessage;
+}
+
+function clearErrors(fields) {
+  fields.forEach((field) => clearError(field));
+}
+
+function clearError(field) {
+  calcButton.classList.remove('slide-right');
+  calcButton.classList.remove('slide-left');
+  document.getElementById(`${field}-result`).innerHTML = '--';
+  document
+    .getElementById(`${field}-input-error`)
+    .classList.remove('input-error');
+  document.getElementById(`${field}-error`).classList.remove('display-error');
+}
