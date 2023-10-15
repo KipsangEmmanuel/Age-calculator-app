@@ -57,6 +57,26 @@ function validateInputDate() {
         validDay = false;
         showError('day-input-error', 'day-error', 'Must be a valid day')
     }
+    // console.log(validDay)
+
+    //validate month
+    if(!monthInputValue) {
+        validMonth = false;
+        showError('month-input-error', 'month-error', 'This field is required')
+    }else if(
+        (month > new Date().getMonth() + 1 && year === new Date().getFullYear()) || month < 1 || month > 12 || (day > new Date().getDate() && month === new Date().getMonth() + 1 && year === new Date().getFullYear())
+    ){
+        validMonth = false;
+        showError('month-input-error', 'month-error', 'Must be a valid month');
+    }
+    // console.log(validMonth)
+
+    
+
+
+
+
+
 
 
 }
